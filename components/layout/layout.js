@@ -3,14 +3,16 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 // import Menu from "../menu/menu"
+import GlobalStyle from "../../styles/Global";
 import Main from "./main";
+import Head from "next/head";
 // import {
 //   BlobityContext,
 //   ContextProviderComponent,
 // } from "../../utils/blobity.context"
-// import GlobalStyle from "../../styles/Global"
 
 const SiteContainer = styled.div`
+  height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -23,14 +25,21 @@ const Layout = ({ children }) => {
 
   return (
     // <div id="outer-container" theme={blobityContext.data.theme}>
-    <SiteContainer id="outer-container">
-      {/* <Menu
+    <>
+      <GlobalStyle />
+      <Head>
+        <title>Accueil</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <SiteContainer id="outer-container">
+        {/* <Menu
         pageWrapId={"page-wrap"}
         outerContainerId={"outer-container"}
         siteTitle={data.site.siteMetadata.title}
       /> */}
-      <Main>{children}</Main>
-    </SiteContainer>
+        <Main>{children}</Main>
+      </SiteContainer>
+    </>
   );
 };
 

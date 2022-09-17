@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-// import styled from "styled-components"
+import styled from "styled-components";
 // import useBlobity from "blobity/lib/useBlobity"
 // import { BlobityContext } from "../../utils/blobity.context"
 // import { colors } from "../../styles/Theme"
@@ -23,19 +23,20 @@ import PropTypes from "prop-types";
 //   radius: 4,
 // }
 
-// const MainContainer = styled.main`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   height: calc(100vh - #{var(--header-height)});
+const MainContainer = styled.main`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: calc(100vh - #{var(--header-height)}); */
 
-//   // Mobile display
-//   @media screen and (max-width: 768px) {
-//     width: 100%;
-//     padding-top: 3rem;
-//     height: 100vh;
-//   }
-// `
+  // Mobile display
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding-top: 3rem;
+    height: 100vh;
+  }
+`;
 
 const Main = ({ children }) => {
   // const blobityInstance = useBlobity(initiaBlobityOptions);
@@ -52,7 +53,7 @@ const Main = ({ children }) => {
   //   };
   // }, [blobityInstance, blobityContext.set]);
 
-  return <div id="page-wrap">{children}</div>;
+  return <MainContainer id="page-wrap">{children}</MainContainer>;
 };
 
 Main.propTypes = {

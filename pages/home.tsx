@@ -1,10 +1,11 @@
-import React from "react"
-import styled from "styled-components"
-import Image from 'next/future/image';
+import React from "react";
+import styled from "styled-components";
+import Image from "next/future/image";
 // import ExperienceItem from "../components/ExperienceItem"
-import facePicture from "../public/nicolas.svg"
-import { NextPage } from "next"
-import Head from "next/head"
+// import facePicture from "../public/nicolas.svg"
+import FacePicture from "../components/svg/FacePicture";
+import { NextPage } from "next";
+import Head from "next/head";
 
 const Resume = styled.div`
   display: block;
@@ -18,15 +19,15 @@ const Resume = styled.div`
     margin: 1rem;
     padding: -1rem;
   }
-`
+`;
 
 const FaceWrapper = styled.div`
-    position: relative;
+  position: relative;
   width: 100px;
   height: 100px;
   margin-right: 1rem;
 
-  &:hover img {
+  &:hover {
     cursor: crosshair;
     .Lips {
       fill: blue;
@@ -37,40 +38,35 @@ const FaceWrapper = styled.div`
   .Lips {
     transition: fill 0.5s ease;
   }
-`
+`;
 
 const Skills = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
 const Title = styled.div`
   display: flex;
   align-items: center;
-`
+`;
 
 const JobTitle = styled.h2`
   color: blue;
-`
+`;
 
-const styleImage = {
-    'width': '100%',
-    'height': '100%'
-}
-
-const ResumePage: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
     <>
-    <Head>
+      <Head>
         <title>CV</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Resume>
         <Title>
-            <FaceWrapper>
-            <img src='/nicolas.svg' alt='happy' width={100} height={100}/>
-
-            </FaceWrapper>
+          <FaceWrapper>
+            <FacePicture></FacePicture>
+            {/* <img src='/nicolas.svg' alt='happy' width={100} height={100}/> */}
+          </FaceWrapper>
 
           <div>
             <h1>Nicolas Castejon</h1>
@@ -79,9 +75,7 @@ const ResumePage: NextPage = () => {
         </Title>
 
         <Skills>
-          <h2>
-            Compétences
-          </h2>
+          <h2>Compétences</h2>
           <div>
             <p>Javascript, HTML, CSS</p>
             <p>Frameworks & libs:ReactJS, Angular 2+, </p>
@@ -131,9 +125,7 @@ const ResumePage: NextPage = () => {
         </div>
 
         <div className="Education">
-          <h2>
-            Formation
-          </h2>
+          <h2>Formation</h2>
           <div>
             <h3>Master en Informatique - 2010</h3>
             <p>Université de Montpellier</p>
@@ -145,7 +137,7 @@ const ResumePage: NextPage = () => {
         </div>
       </Resume>
     </>
-  )
-}
+  );
+};
 
-export default ResumePage
+export default HomePage;
